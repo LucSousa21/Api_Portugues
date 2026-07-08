@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from ..repositories.verbo_repository import get_supabase_client
+from ..repositories.verbo_repository import get_verbo
 
 router = APIRouter()
 
@@ -12,7 +12,7 @@ def home():
 @router.get("/assuntos/{assunto}")
 def get_assuntos(assunto: str):
     banco_dados = {
-        'verbo': get_supabase_client(),
+        'verbo': get_verbo(),
         'substantivo': 'ainda não implementado',
         'adjetivo': 'ainda não implementado',
         'advérbio': 'ainda não implementado',

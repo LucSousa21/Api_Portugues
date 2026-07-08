@@ -1,8 +1,7 @@
-from ..core.supabase import get_supabase_client
+from ..core.supabase import supabase
 
 def get_verbo():
-    supabase = get_supabase_client()
-
+    
     definicao_verbo = supabase.table("verbo").select("*").execute()
     modos_verbais = supabase.table("modo_verbal").select("*").execute()
     tempos_verbais = supabase.table("tempo_verbal").select("*").execute()
