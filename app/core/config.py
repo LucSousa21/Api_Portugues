@@ -1,4 +1,4 @@
-from pydantic import BaseSettings, SetingsConfigDict
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from os import getenv
 
 class Settings(BaseSettings):
@@ -6,6 +6,6 @@ class Settings(BaseSettings):
     supabase_key: str
     supabase_token: str
 
-    model_config = SetingsConfigDict(env_file=".env")
+    model_config = SettingsConfigDict(env_file=".env")
 
 settings = Settings()
