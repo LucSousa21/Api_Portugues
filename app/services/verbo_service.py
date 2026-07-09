@@ -3,7 +3,6 @@ from ..repositories.tempo_verbal_repository import get_tempo_verbal
 from ..repositories.exemplo_repository import get_exemplo_verbal
 from ..repositories.classe_gramatical_repository import get_classe_gramatical
 
-import json
 def exemplo_formatado():    
     exemplo_verbal = get_exemplo_verbal()
     exemplos = {}
@@ -59,7 +58,7 @@ def modo_verbal_formatado():
 
 
 
-def dados_formatados():
+def verbo_formatado():
     definicao = get_classe_gramatical()
     resultado = {
         'verbo': definicao[0],
@@ -70,5 +69,4 @@ def dados_formatados():
 
     return resultado
 
-print(json.dumps(dados_formatados(), indent=4, ensure_ascii=False))
 

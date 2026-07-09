@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from ..repositories.verbo_repository import get_verbo
+from ..services.verbo_service import dados_formatados
 
 router = APIRouter()
 
