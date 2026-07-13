@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 from ..services import (
+    classes_gramaticais,
     verbo_formatado,
     substantivo_formatado,
     adjetivo_formatado,
@@ -17,7 +18,14 @@ router = APIRouter()
 
 @router.get("/")
 def home():
-    return {"message": "API funcionando!"}
+    return {"message": "Bem Vindo!"}
+
+
+@router.get("/assuntos")
+def get_todas_classes():
+    classes = classes_gramaticais()
+
+    return classes
 
 
 @router.get("/assuntos/{assunto}")

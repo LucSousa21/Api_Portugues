@@ -1,3 +1,4 @@
+from .all_classes_service import classes_gramaticais
 from .verbo_service import verbo_formatado
 from .substantivo_service import substantivo_formatado
 from .adjetivo_service import adjetivo_formatado
