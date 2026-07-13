@@ -1,5 +1,16 @@
 from fastapi import APIRouter
-from ..services.verbo_service import dados_formatados
+from ..services import (
+    verbo_formatado,
+    substantivo_formatado,
+    adjetivo_formatado,
+    adverbio_formatado,
+    artigo_formatado,
+    pronome_formatado,
+    numeral_formatado,
+    preposicao_formatado,
+    conjuncao_formatado,
+    interjeicao_formatado,
+)
 
 router = APIRouter()
 
@@ -12,10 +23,17 @@ def home():
 @router.get("/assuntos/{assunto}")
 def get_assuntos(assunto: str):
     banco_dados = {
-        'verbo': get_verbo(),
-        'substantivo': 'ainda não implementado',
-        'adjetivo': 'ainda não implementado',
-        'advérbio': 'ainda não implementado',
+        'verbo': verbo_formatado(),
+        'substantivo': substantivo_formatado(),
+        'adjetivo': adjetivo_formatado(),
+        'adverbio': adverbio_formatado(),
+        'artigo': artigo_formatado(),
+        'conjuncao': conjuncao_formatado(),
+        'interjeicao': interjeicao_formatado(),
+        'numeral': numeral_formatado(),
+        'preposicao': preposicao_formatado(),
+        'pronome': pronome_formatado(),
+
     }
 
     return banco_dados.get(assunto, {"message": "Assunto não encontrado."})
