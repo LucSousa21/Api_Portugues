@@ -1,5 +1,6 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from os import getenv
+
+
 
 class Settings(BaseSettings):
     supabase_url: str

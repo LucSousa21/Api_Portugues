@@ -15,6 +15,7 @@ from ..services import (
 
 router = APIRouter()
 
+# Rotas para os metodos GET
 
 @router.get("/")
 def home():
@@ -45,6 +46,7 @@ def get_assuntos(assunto: str):
     }
 
     return banco_dados.get(assunto, {"message": "Assunto não encontrado."})
+
 
 
 
